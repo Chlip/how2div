@@ -1,30 +1,29 @@
 import React, { useState } from 'react'
 import './App.css';
-import BgColor from './components/BgColor/BgColor';
+import Color from './components/Color/Color';
 import divContext from './context/context';
 import DivDisplay from './components/DivDisplay/DivDisplay';
 import BorderRadius from './components/Border/BorderRadius';
 import BorderWidth from './components/Border/BorderWidth';
 import BoxSizing from './components/BoxSizing/BoxSizing';
 import BorderStyle from './components/Border/BorderStyle';
-import BorderColor from './components/Border/BorderColor';
 import DisplayCss from './DisplayCss/DisplayCss';
 
 
 function App() {
 
-  const [div, setdiv] = useState([])
+  const [div, setdiv] = useState([{backgroundColor: 0}])
   return (
     <divContext.Provider value={{ div, setdiv }}>
       <div className="App">
         
-        <BgColor></BgColor>
+        <Color name={"backgroundColor"}></Color>
         <DivDisplay></DivDisplay>
         <BorderRadius></BorderRadius>
         <BorderWidth></BorderWidth>
         <BoxSizing></BoxSizing>
         <BorderStyle></BorderStyle>
-        <BorderColor></BorderColor>
+        <Color name={"borderColor"}></Color>
         <DisplayCss div={div}></DisplayCss>
       </div>
     </divContext.Provider>
