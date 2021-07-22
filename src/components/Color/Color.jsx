@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react'
 import divContext from '../../context/context'
 import Slider from '../Slider'
+import './Color.css'
 function Color({name}) {
     const divctx = useContext(divContext)
     const [red, setred] = useState(0)
@@ -36,12 +37,11 @@ function Color({name}) {
         return () => { }
     }, [red, blue, green, alpha])
     return (
-        <div>
+        <div className={"container"}>
             <Slider name={"red"} setstate={setred} min={0} max={255} step={1} ></Slider>
             <Slider name={"green"} setstate={setgreen} min={0} max={255} step={1} ></Slider>
             <Slider name={"blue"} setstate={setblue} min={0} max={255} step={1} ></Slider>
             <Slider name={"alpha"} setstate={setalpha} min={0} max={1} step={0.1} ></Slider>
-
         </div>
     )
 }
