@@ -7,6 +7,7 @@ import BorderRadius from './components/Border/BorderRadius';
 import BoxSizing from './components/BoxSizing/BoxSizing';
 import BorderStyle from './components/Border/BorderStyle';
 import DisplayCss from './DisplayCss/DisplayCss';
+import Button from './components/Button';
 
 
 function App() {
@@ -15,15 +16,18 @@ function App() {
   return (
     <divContext.Provider value={{ div, setdiv }}>
       <div className={"App"}>
+        <div className={"left"}>
+
+          <Button name={"borderStyle"}>
+            <BorderStyle id="borderStyle"></BorderStyle>
+          </Button>
+          <Button name={"boxSizing"}><BoxSizing></BoxSizing></Button>
+          <Button name={"borderRadius"}><BorderRadius></BorderRadius></Button>
+          <DisplayCss div={div}></DisplayCss>
+          <Button name={"backgroundColor"}><Color name={"backgroundColor"}></Color></Button>
+        </div>
         <div className={"right"}>
           <DivDisplay></DivDisplay>
-        </div>
-        <div className={"left"}>
-          <Color name={"backgroundColor"}></Color>
-          <BorderRadius></BorderRadius>
-          <BoxSizing></BoxSizing>
-          <BorderStyle></BorderStyle>
-          <DisplayCss div={div}></DisplayCss>
         </div>
       </div>
     </divContext.Provider>

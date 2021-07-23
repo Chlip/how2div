@@ -1,11 +1,25 @@
-.right{
+.right {
+    width: 50%;
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.left{
-    
+
+.left {
+    width: 50%;
+    justify-content: space-evenly;
     display: flex;
+    flex-wrap: wrap;
+    
 }
-.App{
+
+.App {
     display: flex;
-    
+
+}
+
+
+.item{
+    background-color: aqua;
 }
