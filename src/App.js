@@ -17,7 +17,6 @@ function App() {
     <divContext.Provider value={{ div, setdiv }}>
       <div className={"App"}>
         <div className={"left"}>
-
           <Button name={"borderStyle"}>
             <BorderStyle id="borderStyle"></BorderStyle>
           </Button>
@@ -25,9 +24,12 @@ function App() {
           <Button name={"borderRadius"}><BorderRadius></BorderRadius></Button>
           <DisplayCss div={div}></DisplayCss>
           <Button name={"backgroundColor"}><Color name={"backgroundColor"}></Color></Button>
+          
+          
         </div>
         <div className={"right"}>
           <DivDisplay></DivDisplay>
+          <div className="test"></div>
         </div>
       </div>
     </divContext.Provider>

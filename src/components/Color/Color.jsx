@@ -4,7 +4,8 @@ import Slider from '../Slider'
 import './Color.css'
 function Color({name}) {
     const divctx = useContext(divContext)
-    const [red, setred] = useState(0)
+    const test = useRef(0)
+    const [red, setred] = useState(test.current)
     const [green, setgreen] = useState(0)
     const [blue, setblue] = useState(0)
     const [alpha, setalpha] = useState(1)
@@ -34,7 +35,7 @@ function Color({name}) {
 
 
         }
-        return () => { }
+        return () => { test.current = red }
     }, [red, blue, green, alpha])
     return (
         <div className={"container"}>

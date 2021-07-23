@@ -4,6 +4,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    border: 5px double black;
+
 }
 
 .left {
@@ -11,7 +14,7 @@
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
-    
+    background-color: bisque;
 }
 
 .App {
@@ -20,6 +23,17 @@
 }
 
 
-.item{
+.item {
     background-color: aqua;
+}
+
+.test {
+    
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border-bottom: solid;
+    border-width: 20px;
+    border-color: brown;
+
 }
