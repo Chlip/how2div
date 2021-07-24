@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react'
-import divContext from '../../context/context'
+import DivContext from '../../context/context'
 function BoxSizing() {
-    const divctx = useContext(divContext)
+    const divctx = useContext(DivContext)
     const [box, setbox] = useState(0)
     let w = {
         boxSizing: `${(box===0)?"content-box":"border-box"}`

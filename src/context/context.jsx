@@ -1,5 +1,5 @@
 import React from 'react'
 
-const divContext = React.createContext();
+const DivContext = React.createContext();
 
-export default divContext
+export default DivContext

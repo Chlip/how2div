@@ -2,17 +2,15 @@
 import React, { useState, useContext, useEffect, useRef } from 'react'
 import divContext from '../../context/context'
 import BorderWidth from './BorderWidth'
-import BorderRadius from './BorderRadius'
 import Color from '../Color/Color'
+import BorderContext from './BorderContext'
 function BorderStyle() {
-    const divctx = useContext(divContext)
+    const borderctx = useContext(BorderContext)
     const [border, setborder] = useState(false)
     const [style, setstyle] = useState("")
-    let br = {
-        borderStyle: `${style}`
-    }
     const componentJustMounted = useRef(true)
     useEffect(() => {
+
         if (componentJustMounted.current) {
             componentJustMounted.current = false
         }
@@ -23,27 +21,15 @@ function BorderStyle() {
             else{
                 setborder(true)
             }
-            console.log(border)
-            if(divctx.div.find((e)=>{return "borderStyle" in e})){
-                let newdiv = divctx.div.map((e)=>{
-                    if("borderStyle" in e){
-                        e.borderStyle = br.borderStyle
-                    }
-                    return e
-                })
-                divctx.setdiv(prev=>newdiv)
-            }
-            else{
-                divctx.setdiv(prev=>[...prev, br])
-            }
-            
-
+            borderctx.setborder(prev=>[prev[0],prev[1],style,prev[3]])
         }
         return () => { }
     }, [style])
     return (
         <div>
-            <select name="borderStle" id="" onChange={(e)=>{setstyle(prev=>e.target.value)}}>
+            <select name="borderStle" id="" onChange={(e)=>{
+                setstyle(prev=>e.target.value)
+                }}>
                 <option value="none">none</option>
                 <option value="hidden">hidden</option>
                 <option value="dashed">dashed</option>

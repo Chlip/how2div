@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
 import './DivDisplay.css'
-import divContext from '../../context/context'
+import DivContext from '../../context/context'
 function DivDisplay({idk}) {
-    const divctx = useContext(divContext)
+    const divctx = useContext(DivContext)
     let style = {}
     divctx.div.map((e)=>{style = {...style, ...e}})
     return (
