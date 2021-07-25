@@ -14,8 +14,6 @@ function BorderWidth(props) {
         }
         else {
             borderctx.setborder(prev=>[prev[0], width, prev[2],prev[3]])
-
-
         }
         return () => { }
     }, [width])

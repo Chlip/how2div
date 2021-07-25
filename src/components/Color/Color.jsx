@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect, useRef } from 'react'
 import DivContext from '../../context/context'
 import BorderContext from '../Border/BorderContext'
+import ShadowContext from '../Shadow/ShadowContext'
 import Slider from '../Slider'
 import './Color.css'
 function Color({name}) {
     const divctx = useContext(DivContext)
     const borderCtx = useContext(BorderContext)
+    const shadowctx = useContext(ShadowContext)
     const [red, setred] = useState(0)
     const [green, setgreen] = useState(0)
     const [blue, setblue] = useState(0)
@@ -20,8 +22,10 @@ function Color({name}) {
         }
         else {
             if(borderCtx){
-                borderCtx.setborder(prev=>[...prev.splice(0,3),[red,green,blue,alpha]])
-                
+                borderCtx.setborder(prev=>[...prev.splice(0,3),[red,green,blue,alpha]])  
+            }
+            if(shadowctx){
+                shadowctx.setcolor(prev=>[red,green,blue,alpha])
             }
             else{
                 if (divctx.div.find((e) => { return name in e })) {
