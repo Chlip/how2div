@@ -10,6 +10,7 @@ import DisplayCss from './DisplayCss/DisplayCss';
 import Button from './components/Button';
 import Border from './components/Border/Border';
 import Test from './components/Test';
+import ShadowList from './components/Shadow/ShadowList';
 
 function App() {
   let test = [["inset", 0, 0, 4, "blue"], ["", 0, 0, 10, "red"]]
@@ -32,13 +33,13 @@ function App() {
             <Color name={"backgroundColor"}></Color>
           </Button>
           <Button name={"shadow"}>
-            <Shadow></Shadow>
+            <ShadowList></ShadowList>
           </Button>
 
         </div>
         <div className={"right"}>
           <DivDisplay></DivDisplay>
-          <Test></Test>
+          
         </div>
       </div>
     </DivContext.Provider>
