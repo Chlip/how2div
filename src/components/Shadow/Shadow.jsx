@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useRef } from 'react'
 import ShadowContext from './ShadowContext'
 import Slider from '../Slider'
 import Color from '../Color/Color'
-
+import ShadowDel from './ShadowDel'
 function Shadow({ index }) {
 
     const [offsetX, setoffsetX] = useState(0)
@@ -56,6 +56,7 @@ function Shadow({ index }) {
                 <li><Slider min={0} max={50} setstate={setspread}></Slider></li>
                 <li><Color setstate={setcolor}></Color></li>
             </ul>
+            <ShadowDel index={index} value={shadow}></ShadowDel>
         </React.Fragment>
     )
 }
