@@ -11,6 +11,7 @@ import Button from './components/Button';
 import Border from './components/Border/Border';
 import Test from './components/Test';
 import ShadowList from './components/Shadow/ShadowList';
+import Outline from './components/Outline/Outline';
 
 function App() {
   let test = [["inset", 0, 0, 4, "blue"], ["", 0, 0, 10, "red"]]
@@ -34,6 +35,9 @@ function App() {
           </Button>
           <Button name={"shadow"}>
             <ShadowList></ShadowList>
+          </Button>
+          <Button name={"outline"}>
+            <Outline></Outline>
           </Button>
 
         </div>

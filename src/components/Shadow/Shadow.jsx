@@ -50,10 +50,10 @@ function Shadow({ index }) {
                         <input type="radio" name="boxtype" id="none" onChange={() => (setisinset(prev => false))} checked={!isinset} />
                     </form>
                 </li>
-                <li><Slider min={-50} max={50} setstate={setoffsetX} ></Slider></li>
-                <li><Slider min={-50} max={50} setstate={setoffsetY} ></Slider></li>
-                <li><Slider min={0} max={50} setstate={setblur} ></Slider></li>
-                <li><Slider min={0} max={50} setstate={setspread}></Slider></li>
+                <li><Slider min={-50} max={50} setstate={setoffsetX} name={"offsetX"}></Slider></li>
+                <li><Slider min={-50} max={50} setstate={setoffsetY} name={"offsetY"}></Slider></li>
+                <li><Slider min={0} max={50} setstate={setblur} name={"blur"}></Slider></li>
+                <li><Slider min={0} max={50} setstate={setspread} name={"spread"}></Slider></li>
                 <li><Color setstate={setcolor}></Color></li>
             </ul>
             <ShadowDel index={index} value={shadow}></ShadowDel>
