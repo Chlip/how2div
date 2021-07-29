@@ -1,20 +1,16 @@
-import React, {useEffect} from 'react'
+// import React, {useEffect} from 'react'
 
-function DisplayCss({div}) {
-    useEffect(() => {
-        console.log(style)
-        return () => {
-            
-        }
-    }, [div])
-    let style = {}
-    div.map((e)=>{style = {...style, ...e}})
+// function DisplayCss({div}) {
+//     let style = {}
+//     div.map((e)=>{style = {...style, ...e}})
+//     console.log(div)
+//     //div.map((e)=>{style = {...style, ...e}})
     
-    return (
-        <div>
+//     return (
+//         <div>
             
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default DisplayCss
+// export default DisplayCss

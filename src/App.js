@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Color from './components/Color/Color';
 import DivContext from './context/context';
@@ -13,10 +13,28 @@ import Test from './components/Test';
 import ShadowList from './components/Shadow/ShadowList';
 import Outline from './components/Outline/Outline';
 
+function translateToCss(style){
+  for(const key in style){
+    for (var i = 0; i < key.length; i++){
+      if (key[i] === key[i].toUpperCase()){
+        let newKey = key.replace(key[i], `-${key[i].toLowerCase()}`)
+        style[newKey] = style[key]
+        delete style[key]
+      } 
+    }
+  }
+  return style;
+
+}
 function App() {
-  let test = [["inset", 0, 0, 4, "blue"], ["", 0, 0, 10, "red"]]
-  console.log(test[0].join(" "))
+
   const [div, setdiv] = useState([])
+
+  useEffect(() => {
+    let style = {}
+    div.map((e) => { style = { ...style, ...e } })
+    console.log(translateToCss(style))
+  }, [div])
   return (
     <DivContext.Provider value={{ div, setdiv }}>
       <div className={"App"}>
@@ -42,7 +60,7 @@ function App() {
 
         </div>
         <div className={"right"}>
-          <DivDisplay></DivDisplay>
+          <DivDisplay div={div}></DivDisplay>
           
         </div>
       </div>

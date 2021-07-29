@@ -22,7 +22,7 @@ function Shadow({ index }) {
             componentJustMounted.current = false
         }
         else{
-            console.log(shadow)
+            
             setshadow(prev => [isinset, offsetX, offsetY, blur, spread, color])
             shadowctx.setlist(prev=>{
                 prev[index] = result
