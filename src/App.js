@@ -12,6 +12,7 @@ import Border from './components/Border/Border';
 import Test from './components/Test';
 import ShadowList from './components/Shadow/ShadowList';
 import Outline from './components/Outline/Outline';
+import DisplayText from './components/DisplayText';
 
 function translateToCss(style){
   for(const key in style){
@@ -19,6 +20,7 @@ function translateToCss(style){
       if (key[i] === key[i].toUpperCase()){
         let newKey = key.replace(key[i], `-${key[i].toLowerCase()}`)
         style[newKey] = style[key]
+        style[newKey] = style[newKey] + ";"
         delete style[key]
       } 
     }
@@ -27,12 +29,13 @@ function translateToCss(style){
 
 }
 function App() {
-
+  let style = {}
   const [div, setdiv] = useState([])
-
+  const [test, settest] = useState({})
   useEffect(() => {
-    let style = {}
+    
     div.map((e) => { style = { ...style, ...e } })
+    div.map((e) => { settest(prev=>{return { ...prev, ...e }}) })
     console.log(translateToCss(style))
   }, [div])
   return (
@@ -61,7 +64,7 @@ function App() {
         </div>
         <div className={"right"}>
           <DivDisplay div={div}></DivDisplay>
-          
+          <DisplayText div={JSON.stringify(test)}></DisplayText>
         </div>
       </div>
     </DivContext.Provider>
